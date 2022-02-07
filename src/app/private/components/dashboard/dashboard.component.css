@@ -1,0 +1,31 @@
+:root {
+    --lightred: #CC4E49;
+    --white: #ffffff;
+    --blue: lightskyblue;
+    --black: black;
+}
+
+.container {
+    text-align: center;
+    color: var(--black);
+}
+
+.allusers{
+    margin-left: 1rem;
+} 
+h1 {
+    padding-top: 2rem;
+}
+
+.table {
+    padding-left: 15vw;
+    width: 70vw;
+    height: 80vh;
+    border-radius: 10px;
+    color: var(--blue);
+}
+
+.mat-toolbar {
+    background-color: #CC4E49;
+    color: #ffffff;
+}

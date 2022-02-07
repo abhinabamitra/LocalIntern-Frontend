@@ -1,0 +1,77 @@
+<mat-toolbar>
+  <a id="a-header" [routerLink]="['../login']">
+    <mat-icon aria-hidden="false">key</mat-icon>
+    Docquity Local Intern Account
+  </a>
+</mat-toolbar>
+<div class="container">
+  <div
+    [ngClass]="isHover"
+    (mouseover)="changeElevation($event)"
+    (mouseout)="changeElevation($event)"
+    [class.mat-elevation-z3]="!ishover"
+    [class.mat-elevation-z15]="ishover"
+  >
+    <div id="matcardparent">
+      <mat-card>
+        <mat-card-title>Login</mat-card-title>
+        <mat-card-content>
+          <form [formGroup]="form" (ngSubmit)="login()">
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input
+                type="email"
+                matInput
+                placeholder="Email"
+                formControlName="Email"
+              />
+              <mat-hint>
+              <mat-error *ngIf="Email.touched && Email.hasError('required')">
+                Email is required
+              </mat-error>
+              <mat-error *ngIf="Email.touched && Email.hasError('email')"
+                >Please enter a valid email</mat-error>
+              <mat-error *ngIf="Email.touched && Email.hasError('pattern')"
+                >Docquity email is required</mat-error>
+            </mat-hint>
+            </mat-form-field>
+            <mat-form-field appearance="outline" >
+              <mat-label>Password</mat-label>
+              <input
+                type="password"
+                matInput
+                placeholder="Password"
+                formControlName="Password"
+              />
+              <mat-hint>
+              <mat-error
+                *ngIf="Password.touched && Password.hasError('required')"
+                >Password is required</mat-error>
+              <mat-error
+                *ngIf="Password.touched && Password.hasError('pattern')">
+                Please enter valid Password</mat-error>
+            </mat-hint>
+            </mat-form-field>
+            <mat-hint *ngIf="!form.valid">
+              <small>All the fields are mandatory</small>
+            </mat-hint> 
+            <div class="button">
+              <button
+                mat-raised-button
+                type="submit"
+                [disabled]="!form.valid"
+                color="warn">
+                Login
+              </button>
+            </div>
+            <p style="text-align: center;">OR,</p>
+            <div class="send-to-login mat-typography">
+              <a class="mat-title" [routerLink]="['../register']" style="color: black;"
+                >Create new account</a>
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

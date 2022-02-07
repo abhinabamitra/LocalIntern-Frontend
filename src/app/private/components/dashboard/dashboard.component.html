@@ -1,0 +1,38 @@
+<mat-toolbar>
+    <a id="a-header">
+      <mat-icon aria-hidden="false">key</mat-icon>
+      Docquity Local Intern Account
+    </a>
+</mat-toolbar>
+
+<div class="container">
+    <h1>Hi ! {{userdata.Username}}</h1>
+    <p>You're logged in!!</p>
+
+    <div class="logout-btn">
+        <button mat-raised-button color="antiquewhite">
+            <a (click)="logout()">Logout</a>
+        </button>
+        <button mat-raised-button color="antiquewhite" (click)="getalluser()" class="allusers">
+            {{buttonValue}}
+        </button>
+    </div>
+    <div *ngIf="show">
+        <h1> Users</h1>
+
+        <div class ="table">
+
+            <mat-table #table [dataSource]="dataSource" matSort>
+                <ng-container matColumnDef="{{column.id}}" *ngFor="let column of columnNames">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> {{column.value}}</mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element[column.id]}}</mat-cell>
+                </ng-container>
+              
+                <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: columns;" [ngStyle]="{
+                    'background-color': getColor(row.Username)
+                  }"></mat-row>
+              </mat-table>
+        </div>
+    </div>
+</div>
