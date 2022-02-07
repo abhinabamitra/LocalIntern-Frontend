@@ -109,7 +109,7 @@ export class DashboardComponent implements OnInit {
   getColor(uname: any) {
     const match = (uname == this.currentUsername);
     if (match) {
-      return '#d8ccef';
+      return '#e3f2fd';
     } else return 'white';
   }
 }

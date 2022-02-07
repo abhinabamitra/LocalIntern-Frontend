@@ -17,7 +17,7 @@
 
 #matcardparent {
   border-radius: 10px;
-  color: red;
+  color: rgb(204, 78, 73);
 }
 
 .mat-card {
@@ -56,6 +56,7 @@ mat-form-field {
 .button {
   width: inherit;
   margin: 16px 0px;
+  color: rgb(204, 78, 73);
 }
 
 .mat-raised-button {
@@ -76,8 +77,4 @@ mat-form-field {
 
 .send-to-login .mat-title {
   font-size: 18px;
-}
-
-.mat-toolbar {
-  background-color:rgb(204, 78, 73)
 }

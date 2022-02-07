@@ -1,0 +1,6 @@
+"./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css"
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+.mat-toolbar {
+  background-color:rgb(204, 78, 73)
+}
