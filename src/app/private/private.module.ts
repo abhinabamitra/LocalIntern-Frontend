@@ -12,7 +12,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { AgGridModule } from 'ag-grid-angular';
 import { RouterModule } from '@angular/router';
-import { MatTableModule } from '@angular/material/table'
+import { MatTableModule } from '@angular/material/table';
+import { MatMenu, MatMenuModule } from '@angular/material/menu'
 //import * as React from 'react';
 //import { DataGrid } from '@mui/x-data-grid';
 
@@ -31,7 +32,8 @@ import { MatTableModule } from '@angular/material/table'
     MatIconModule,
     MatToolbarModule,
     AgGridModule.withComponents([]),
-    MatTableModule
+    MatTableModule,
+    MatMenuModule,
   ],
 })
 export class PrivateModule {}

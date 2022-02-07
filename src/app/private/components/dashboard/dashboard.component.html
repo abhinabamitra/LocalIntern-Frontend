@@ -3,6 +3,27 @@
       <mat-icon aria-hidden="false">key</mat-icon>
       Docquity Local Intern Account
     </a>
+    
+    <p class="user-card"></p>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>account_circle</mat-icon>
+        {{userdata.Username}}
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>headset_mic</mat-icon>
+          <span>{{userdata.Firstname}} {{userdata.Lastname}}</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>email</mat-icon>
+          <span>{{userdata.Email}}</span>
+        </button>
+        <button mat-menu-item (click)="logout()">
+          <mat-icon>power_settings_new</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+      
 </mat-toolbar>
 
 <div class="container">
@@ -10,9 +31,9 @@
     <p>You're logged in!!</p>
 
     <div class="logout-btn">
-        <button mat-raised-button color="antiquewhite">
+        <!-- <button mat-raised-button color="antiquewhite">
             <a (click)="logout()">Logout</a>
-        </button>
+        </button> -->
         <button mat-raised-button color="antiquewhite" (click)="getalluser()" class="allusers">
             {{buttonValue}}
         </button>
